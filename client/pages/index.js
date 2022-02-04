@@ -1,14 +1,22 @@
-import { getSortedPostsData } from '@lib/posts'
 import Link from 'next/link'
-import Date from '@components/utils/date'
+// [Components]
+import { getSortedPostsData } from '@lib/posts'
 import GoogleButton from '@components/auth/GoogleButton'
-import { Layout } from '@components/layouts'
+import { Layout, HeadSeo } from '@components/layouts'
+// [Utils]
+import { Date } from '@components/utils'
 
 export default function Home({ allPostsData }) {
 	return (
-		<Layout
-			siteTitle='Happy little daydreamer'
-			metaDescrition='Welcome home!'>
+		<Layout>
+			<HeadSeo
+				title={`Your Awesome Title Here`}
+				description={`Your description goes here on every page.
+                  Keep character count between 140 to 160 characters`}
+				canonicalUrl={siteMetadata.siteUrl}
+				ogTwitterImage={siteMetadata.siteLogoSquare}
+				ogType={'website'}
+			/>
 			<section>
 				<p>[Your Self Introduction]</p>
 				<p>
@@ -22,14 +30,14 @@ export default function Home({ allPostsData }) {
 				<h2>Blog</h2>
 				<GoogleButton />
 				<ul>
-					{allPostsData.map(({ id, date, title }) => (
+					{allPostsData.map(({ id, createdAt, title }) => (
 						<li key={id}>
 							<Link href={`/posts/${id}`}>
 								<a>{title}</a>
 							</Link>
 							<br />
 							<small>
-								<Date dateString={date} />
+								<Date dateString={createdAt} />
 							</small>
 						</li>
 					))}

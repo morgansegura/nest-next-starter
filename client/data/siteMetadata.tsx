@@ -1,9 +1,7 @@
 const siteMetadata = {
-	companyName: 'Example',
+	companyName: 'Youth Sports',
 	phoneNumber: '(xxx) xxx-xxxx',
-	siteUrl: 'https://example.com',
-	siteLogo: 'https://example.com/images/logo.png',
-	siteLogoSquare: 'https://example.com/images/logox200.png',
+	siteUrl: 'http://localhost:3000',
 	email: 'yourName@example.com',
 	twitter: 'https://twitter.com/example.page',
 	twitterHandle: '@example',

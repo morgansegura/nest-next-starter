@@ -3,25 +3,32 @@ import { getAllPostIds, getPostData } from '@lib/posts'
 
 import Date from '@components/utils/date'
 import { GetStaticProps, GetStaticPaths } from 'next'
-// import { siteMetadata } from '@/metadata'
+import { siteMetadata } from 'data'
+
+interface Author {
+	name: string
+}
 
 export default function Post({
 	postData
 }: {
 	postData: {
-		title: string
-		description: string
-		date: string
-		contentHtml: string
+		title?: string
+		description?: string
+		createdAt?: string
+		contentHtml?: string
+		ogImageUrl?: string
+		slug?: string
+		author?: Author
 	}
 }) {
 	return (
 		<Layout>
 			<HeadSeo
-				title={`${postData?.title} | ${siteMetadata.companyName} `}
+				title={`${postData?.title}`}
 				description={postData?.description}
-				canonicalUrl={`${siteMetadata.siteUrl}/blog/${postData?.slug}`}
-				ogImageUrl={postData?.ogImage.url}
+				canonicalUrl={`${siteMetadata.siteUrl}/posts/${postData?.slug}`}
+				ogImageUrl={postData?.ogImageUrl}
 				ogType={'article'}>
 				<script
 					type='application/ld+json'
@@ -30,7 +37,7 @@ export default function Post({
                         "@type": "BlogArticle",
                         "headline": "${postData?.title}",
                         "image": [
-                          "${postData?.ogImage.url}"
+                          "${postData?.ogImageUrl}"
                         ],
                         "datePublished": "${postData?.createdAt}",
                         "author": [{
@@ -44,10 +51,10 @@ export default function Post({
 			<article>
 				<h1>{postData.title}</h1>
 				<div>
-					<Date dateString={postData.date} />
+					<Date dateString={postData?.createdAt} />
 				</div>
 				<div
-					dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+					dangerouslySetInnerHTML={{ __html: postData?.contentHtml }}
 				/>
 			</article>
 		</Layout>

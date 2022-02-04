@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 // [Metadata]
-import { siteMetadata } from '@data'
+import { siteMetadata } from 'data'
 
 interface HeadContent {}
 
@@ -27,7 +27,7 @@ const HeadContent: React.FC<Props> = ({
 	<Head>
 		<meta charSet='utf-8' />
 		<title>
-			{title} | {process.env.SITE_TITLE}
+			{title} » {siteMetadata.companyName}
 		</title>
 		<meta name='viewport' content='width=device-width, initial-scale=1' />
 		<meta name='description' content={description} />
@@ -99,6 +99,13 @@ const HeadContent: React.FC<Props> = ({
 			href='/favicon/safari-pinned-tab.svg'
 			color='#0041df'
 		/>
+
+		<link
+			rel='stylesheet'
+			href='https://fonts.googleapis.com/css?family=Lato:300,400,500,700&display=swap'
+		/>
+		<link rel='stylesheet' type='text/css' href='/nprogress.css' />
+		<link rel='stylesheet' type='text/css' href='/styles.css' />
 
 		{children}
 	</Head>
