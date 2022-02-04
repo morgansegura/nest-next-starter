@@ -4,10 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev:docker": "cd ./server && docker-compose up",
-		"dev:server": "cd ./server && npm run start:dev",
-		"dev:client": "cd ./client && npm run dev",
-		"dev": "concurrently \"dev:docker\" \"dev:server\" \"dev:client\""
+		"dev:docker": "cd ./server/ && docker-compose up",
+		"dev:server": "cd ./server/ && npm run start:dev",
+		"dev:client": "cd ./client/ && npm run dev"
 	},
 	"author": "",
 	"license": "ISC",
