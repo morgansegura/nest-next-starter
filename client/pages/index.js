@@ -2,10 +2,13 @@ import { getSortedPostsData } from '@lib/posts'
 import Link from 'next/link'
 import Date from '@components/utils/date'
 import GoogleButton from '@components/auth/GoogleButton'
+import { Layout } from '@components/layouts'
 
 export default function Home({ allPostsData }) {
 	return (
-		<>
+		<Layout
+			siteTitle='Happy little daydreamer'
+			metaDescrition='Welcome home!'>
 			<section>
 				<p>[Your Self Introduction]</p>
 				<p>
@@ -32,7 +35,7 @@ export default function Home({ allPostsData }) {
 					))}
 				</ul>
 			</section>
-		</>
+		</Layout>
 	)
 }
 

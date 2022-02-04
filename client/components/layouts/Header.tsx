@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import NProgress from 'nprogress'
+import nProgress from 'nprogress'
 import { Router, useRouter } from 'next/router'
 
 // [Components]
@@ -12,14 +12,21 @@ import useStorage from '@hooks/useStorage'
 import { Logo, Menu, Nav, NavItem, Header as Wrapper } from '@styles/Header'
 import { Container } from '@styles/Container'
 
-Router.onRouteChangeStart = () => NProgress.start()
-Router.onRouteChangeComplete = () => NProgress.done()
-Router.onRouteChangeError = () => NProgress.done()
+Router.events.on('routeChangeStart', nProgress.start)
+Router.events.on('routeChangeError', nProgress.done)
+Router.events.on('routeChangeComplete', nProgress.done)
 
-const Header = () => {
+interface User {
+	name?: string
+}
+interface Props {
+	user?: User
+}
+
+const Header: React.FC<Props> = ({ user }) => {
 	const router = useRouter()
 
-	function isActive(route) {
+	function isActive(route: string) {
 		return router.pathname === route
 	}
 
@@ -31,11 +38,11 @@ const Header = () => {
 				<Menu>
 					<Link href='/'>
 						<a>
-							<Logo>Youth Sports</Logo>
+							<Logo>{process.env.SITE_TITLE}</Logo>
 						</a>
 					</Link>
 					<>
-						{false ? (
+						{user ? (
 							<Nav>
 								{/* <Link href='/cart'>
 									<a>

@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import * as cookieParser from 'cookie-parser';
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { config } from 'aws-sdk';
 import rawBodyMiddleware from './utils/rawBody.middleware';
 import CustomLogger from './logger/customLogger';
@@ -32,6 +33,15 @@ async function bootstrap() {
   });
 
   app.use(rawBodyMiddleware());
+
+  const swaggerConfig = new DocumentBuilder()
+    .setTitle('Nest Next Starter')
+    .setDescription('The Nest Next API swagger implementation')
+    .setVersion('1.0')
+    .addTag('Controllers')
+    .build();
+  const document = SwaggerModule.createDocument(app, swaggerConfig);
+  SwaggerModule.setup('api', app, document);
 
   await app.listen(3001);
 }
