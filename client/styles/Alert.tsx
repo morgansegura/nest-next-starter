@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 import * as include from '@styles/config/utilities'
-import { rgba, readableColor } from 'polished'
 
 export const Alert = styled.div`
 	display: flex;

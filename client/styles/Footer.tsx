@@ -37,7 +37,7 @@ export const Menu = styled.div`
 	justify-content: space-between;
 `
 export const Logo = styled.div`
-	${include.fontSizing('15px', '18px', '600')}
+	${include.fontSizing('15px', '18px', 600)}
 	color: ${include.colors.slate900};
 `
 export const Nav = styled.nav`
@@ -53,7 +53,7 @@ export const NavItem = styled.span`
 	${({ active }) =>
 		active &&
 		`
-        color: ${include.cyan['50']};
+        color: ${include.colors.blue600};
     `};
 `
 

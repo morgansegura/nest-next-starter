@@ -1,14 +1,5 @@
 import styled, { css } from 'styled-components'
 import * as include from '@styles/config/utilities'
-import { em, rem, rgba } from 'polished'
-
-/*
-	[spread]
-	flex: 1 0 auto
-
-	[]
-*/
-const directionArr = ['row', 'row-reverse', 'column', 'column-reverse']
 
 export const Box = styled(props => props.as)`
 	${({ maxwidth }) =>

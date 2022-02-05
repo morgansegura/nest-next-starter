@@ -2,14 +2,15 @@ import React from 'react'
 import Link from 'next/link'
 import nProgress from 'nprogress'
 import { Router, useRouter } from 'next/router'
-
 // [Components]
 import { Button } from '@components/core'
+import { ProfileMenu } from '@components/menus'
+// [Metadata]
+import { siteMetadata } from 'data'
 // [Storage]
 import useStorage from '@hooks/useStorage'
-
 // [Styles]
-import { Logo, Menu, Nav, NavItem, Header as Wrapper } from '@styles/Header'
+import { Logo, Menu, Nav, Header as Wrapper } from '@styles/Header'
 import { Container } from '@styles/Container'
 
 Router.events.on('routeChangeStart', nProgress.start)
@@ -38,11 +39,11 @@ const Header: React.FC<Props> = ({ user }) => {
 				<Menu>
 					<Link href='/'>
 						<a>
-							<Logo>{process.env.SITE_TITLE}</Logo>
+							<Logo>{siteMetadata.companyName}</Logo>
 						</a>
 					</Link>
 					<>
-						{user ? (
+						{!user ? (
 							<Nav>
 								{/* <Link href='/cart'>
 									<a>
@@ -69,7 +70,7 @@ const Header: React.FC<Props> = ({ user }) => {
 									</a>
 								</Link> */}
 
-								{/* <Logout /> */}
+								<ProfileMenu />
 							</Nav>
 						) : (
 							<Nav>

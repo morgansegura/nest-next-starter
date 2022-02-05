@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import * as include from '@styles/config/utilities'
 import { rgba } from 'polished'
-import { spreadUp, spreadDown, flicker } from '@styles/keyframes'
+import { spreadDown, flicker } from '@styles/keyframes'
 
 export const LoadingContainer = styled.div`
 	z-index: 1;
@@ -22,14 +22,6 @@ export const LoadingContainer = styled.div`
 		${rgba(include.colors.violet100, 1)} 0%,
 		${rgba(include.colors.violet300, 0.95)} 100%
 	);
-	/* background: linear-gradient(
-		${include.colors.violet300} 0%,
-		${include.colors.violet200} 25%,
-		${rgba(include.colors.violet100, 0.9)} 40%,
-		${rgba(include.colors.violet100, 0.9)} 60%,
-		${include.colors.violet200} 75%,
-		${include.colors.violet300} 100%
-	); */
 `
 
 export const LoadingContent = styled.div`

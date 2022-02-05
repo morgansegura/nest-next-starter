@@ -9,9 +9,10 @@ export const Scaffold = styled.div`
 	--max-width: calc(100% - (2 * var(--lane-gutter)));
 	--grid-gutter: ${include.sp['2']};
 	--lane-gutter: ${include.sp['3']};
+	--contain-xxl: ${include.contain['xxl']};
+	--sp20: ${include.sp['20']};
 
 	${include.media.sm`
-        /* --size: 'Mobile: 375px - 639px'; */
         --size: 'Mobile: 375px - 639px';
     `}
 
@@ -27,17 +28,15 @@ export const Scaffold = styled.div`
 
     ${include.media.xl`
         --size: 'Desktop: 1376px - 1799px';
-        --lane-gutter: 136px;
+        --lane-gutter: 70px;
     `}
 
     ${include.media.xxl`
         --size: 'Large Desktop: 1800px - 1928px';
-        --lane-gutter: 224px;
+        --lane-gutter: 400px;
     `}
 
     ${include.above(include.contain['offset'])`
-        --lane-gutter: ${include.sp['20']};
-        --max-width: ${include.contain['xxl']} - (2 * var(--lane-gutter)));
         --size: '2256px and beyond';
     `}
 

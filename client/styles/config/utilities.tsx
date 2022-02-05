@@ -1,11 +1,11 @@
 import { css } from 'styled-components'
-import { em, rem, rgba } from 'polished'
+import { em, rem } from 'polished'
 
 export const font = {
 	base: '16px',
 	family: {
-		sans: `'Lato', 'Graphik', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif`,
-		serif: `'Lato', 'Graphik', 'Helvetica Neue', 'Helvetica', 'Arial', serif`,
+		sans: `'Roboto', 'Graphik', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif`,
+		serif: `'Roboto', 'Graphik', 'Helvetica Neue', 'Helvetica', 'Arial', serif`,
 		mono: `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace`
 	}
 }
@@ -310,7 +310,8 @@ export const device = {
 	tablet: '640px',
 	'desktop-sm': '1024px',
 	desktop: '1376px',
-	'desktop-lg': '1800px'
+	'desktop-lg': '1800px',
+	'desktop-xl': '2096px'
 }
 export const radius = {
 	none: `
@@ -453,25 +454,25 @@ export const container = {
 		margin-left: ${sp[2]};
 
 		${media.md`
-				margin-right: ${sp[5]};
-				margin-left: ${sp[5]};
-			`}
+			margin-right: ${sp[5]};
+			margin-left: ${sp[5]};
+		`}
 
 		${media.xl`
-				margin-right: ${sp[9]};
-				margin-left: ${sp[9]};
-			`}
+			margin-right: ${sp[9]};
+			margin-left: ${sp[9]};
+		`}
 
-			${media.xxl`
-				margin-right: ${sp[20]};
-				margin-left: ${sp[20]};
-			`}
+		${media.xxl`
+			margin-right: ${sp[20]};
+			margin-left: ${sp[20]};
+		`}
 
-			${above(contain['offset'])`
-				max-width: ${contain['xxl'] - sp[40]};
-				margin-right: auto;
-				margin-left: auto;
-			`}
+		${above(contain['offset'])`
+			max-width: 2096px;
+			margin-right: auto;
+			margin-left: auto;
+		`}
 	`,
 	xxl: css`
 		max-width: ${contain['xxl']};
@@ -479,19 +480,19 @@ export const container = {
 		margin-left: ${sp[1]};
 
 		${media.md`
-				margin-right: ${sp[3]};
-				margin-left: ${sp[3]};
-			`}
+			margin-right: ${sp[3]};
+			margin-left: ${sp[3]};
+		`}
 
 		${media.xl`
-				margin-right: ${sp[8]};
-				margin-left: ${sp[8]};
-			`}
+			margin-right: ${sp[8]};
+			margin-left: ${sp[8]};
+		`}
 
-			${above(contain['offset'])`
-				margin-right: auto;
-				margin-left: auto;
-			`}
+		${above(contain['offset'])`
+			margin-right: auto;
+			margin-left: auto;
+		`}
 	`
 }
 

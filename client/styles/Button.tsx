@@ -41,31 +41,31 @@ export const Button = styled(props => props.as)`
 	${props =>
 		props.tiny
 			? css`
-					${include.fontSizing('10px', '24px', '600')};
+					${include.fontSizing('10px', '24px', 600)};
 					padding: 4px 12px;
 			  `
 			: props.small
 			? css`
-					${include.fontSizing('11px', '28px', '600')};
+					${include.fontSizing('11px', '28px', 600)};
 					padding: 6px 18px;
 			  `
 			: props.medium
 			? css`
-					${include.fontSizing('12px', '32px', '600')};
+					${include.fontSizing('12px', '32px', 600)};
 					padding: 8px 24px;
 			  `
 			: props.large
 			? css`
-					${include.fontSizing('14px', '36px', '600')};
+					${include.fontSizing('14px', '36px', 600)};
 					padding: 10px 50px;
 			  `
 			: props.extraLarge
 			? css`
-					${include.fontSizing('18px', '40px', '600')};
+					${include.fontSizing('18px', '40px', 600)};
 					padding: 10px 50px;
 			  `
 			: css`
-					${include.fontSizing('12px', '24px', '600')};
+					${include.fontSizing('12px', '24px', 600)};
 					padding: 8px 16px;
 			  `}
 

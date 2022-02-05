@@ -5,8 +5,18 @@ import GoogleButton from '@components/auth/GoogleButton'
 import { Layout, HeadSeo } from '@components/layouts'
 // [Utils]
 import { Date } from '@components/utils'
+import { siteMetadata } from 'data'
 
-export default function Home({ allPostsData }) {
+interface SiteMetadata {
+	siteUrl: string
+	siteLogoSquare: string
+}
+interface Props {
+	allPostsData?: any
+	siteMetadata: SiteMetadata
+}
+
+const Home: React.FC<Props> = ({ allPostsData, siteMetadata }) => {
 	return (
 		<Layout>
 			<HeadSeo
@@ -14,7 +24,7 @@ export default function Home({ allPostsData }) {
 				description={`Your description goes here on every page.
                   Keep character count between 140 to 160 characters`}
 				canonicalUrl={siteMetadata.siteUrl}
-				ogTwitterImage={siteMetadata.siteLogoSquare}
+				ogTwitterImage={siteMetadata?.siteLogoSquare}
 				ogType={'website'}
 			/>
 			<section>
@@ -55,3 +65,5 @@ export async function getStaticProps() {
 		}
 	}
 }
+
+export default Home
