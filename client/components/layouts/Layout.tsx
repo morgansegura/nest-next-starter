@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Footer, HeadSeo, Header } from '@components/layouts'
+import { Footer, Header } from '@components/layouts'
 import { Container, Main, Wrapper } from '@styles/Container'
+import { StickyHeader } from '@components/core'
 
 const name = '[Your Name]'
 export const title = 'Next.js Sample Website'
@@ -18,7 +19,9 @@ interface Props {
 const Layout: React.FC<Props> = ({ children, user }) => {
 	return (
 		<Wrapper>
-			<Header user={user} />
+			<StickyHeader>
+				<Header user={user} />
+			</StickyHeader>
 			<Main>
 				<Container style={{ flex: 1 }}>{children}</Container>
 			</Main>

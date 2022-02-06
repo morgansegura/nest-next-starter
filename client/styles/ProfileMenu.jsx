@@ -17,6 +17,7 @@ export const MenuSelector = styled.button`
 
 export const Menu = styled.div`
 	position: absolute;
+	z-index: 100;
 	overflow: hidden;
 	top: ${include.sp[10]};
 	right: ${include.sp[8]};
@@ -35,15 +36,12 @@ export const Menu = styled.div`
 	transition: opacity 0.3s ease-out;
 
 	${props =>
-		!props.isVisible
+		props.isVisible
 			? css`
-					opacity: 1;
-					z-index: 1;
+					display: block;
 			  `
 			: css`
-					opacity: 0;
-					z-index: -1;
-					user-select: none;
+					display: none;
 			  `};
 	a {
 		display: flex;
@@ -89,10 +87,10 @@ export const Avatar = styled.div`
 	${props =>
 		props.focus
 			? css`
-					outline: 2px solid ${rgba(include.colors.violet900, 0)};
+					outline: 2px solid ${rgba(include.colors.violet900, 0.4)};
 			  `
 			: css`
-					outline: 2px solid ${rgba(include.colors.violet900, 0.4)};
+					outline: 2px solid transparent;
 			  `}
 `
 

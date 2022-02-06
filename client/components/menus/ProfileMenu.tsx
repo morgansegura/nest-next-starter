@@ -21,9 +21,8 @@ const ProfileMenu: React.FC<Props> = () => {
 		<div>
 			<MenuSelector onClick={toggleMenu}>
 				<Avatar focus={focus}>UN</Avatar>
-				{console.log(focus)}
 			</MenuSelector>
-			<Menu isVisible={showMenu} focus={focus}>
+			<Menu isVisible={showMenu}>
 				<Tab>Username </Tab>
 				<Link href='/profile'>
 					<a>My Profile</a>

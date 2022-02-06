@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import * as include from '@styles/config/utilities'
-import { rgba, readableColor } from 'polished'
+import { readableColor } from 'polished'
 
 export const Button = styled(props => props.as)`
 	cursor: pointer;
@@ -166,9 +166,9 @@ export const Button = styled(props => props.as)`
 		disabled === true &&
 		css`
 			pointer-events: none;
-			background-color: ${include.colors.neutral10};
+			background-color: ${include.colors.slate100};
 			border: 1px solid transparent;
-			color: ${include.colors.neutral90};
+			color: ${include.colors.slate900};
 		`}
 
 	${({ outline }) =>
