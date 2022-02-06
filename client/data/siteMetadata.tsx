@@ -7,7 +7,8 @@ const siteMetadata = {
 	twitterHandle: '@example',
 	facebook: 'https://www.facebook.com/example.page',
 	instagram: 'https://www.instagram.com/example.page',
-	linkedin: 'https://www.linkedin.com/in/example.page'
+	linkedin: 'https://www.linkedin.com/in/example.page',
+	siteLogoSquare: ''
 }
 
 export default siteMetadata
