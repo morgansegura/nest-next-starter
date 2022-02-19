@@ -1,8 +1,6 @@
 import React from 'react'
 // [Providers]
-import { ThemesProvider } from 'components/providers'
-// [Styles]
-import { GlobalStyle } from 'styles/config/globalStyles'
+import { AuthProvider, ThemesProvider } from 'components/providers'
 
 type Props = {
 	children?: any
@@ -11,8 +9,7 @@ type Props = {
 const AppProvider: React.FC<Props> = ({ children }) => {
 	return (
 		<ThemesProvider>
-			<GlobalStyle />
-			{children}
+			<AuthProvider>{children}</AuthProvider>
 		</ThemesProvider>
 	)
 }

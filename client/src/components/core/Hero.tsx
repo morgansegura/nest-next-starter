@@ -53,7 +53,7 @@ const Hero: React.FC<Props> = ({
 							)}
 							{buttonLabel && (
 								<HeroButtonContainer>
-									<HeroButton onClick={onClick}>
+									<HeroButton color={color} onClick={onClick}>
 										{buttonLabel}
 									</HeroButton>
 								</HeroButtonContainer>

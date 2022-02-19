@@ -19,15 +19,42 @@ export const Button = styled(props => props.as)<{ size: any | null }>`
 	}
 
 	/* [Radius] */
-	${({ radiusNone }) => radiusNone && include.radius['none']}
-	${({ radiusSM }) => radiusSM && include.radius['none']}
-	${({ radiusBase }) => radiusBase && include.radius['base']}
-	${({ radiusMD }) => radiusMD && include.radius['md']}
-	${({ radiusLG }) => radiusLG && include.radius['lg']}
-	${({ radiusXL }) => radiusXL && include.radius['xl']}
-	${({ radius2XL }) => radius2XL && include.radius['2xl']}
-	${({ radius3XL }) => radius3XL && include.radius['3xl']}
-	${({ radiusRound }) => radiusRound && include.radius['circle']}
+	${props =>
+		props.radius === 'base'
+			? css`
+					${include.radius['base']}
+			  `
+			: props.radius === 'sm'
+			? css`
+					${include.radius['sm']}
+			  `
+			: props.radius === 'md'
+			? css`
+					${include.radius['md']}
+			  `
+			: props.radius === 'lg'
+			? css`
+					${include.radius['md']}
+			  `
+			: props.radius === 'xl'
+			? css`
+					${include.radius['md']}
+			  `
+			: props.radisu === '2xl'
+			? css`
+					${include.radius['md']}
+			  `
+			: props.radius === '3xl'
+			? css`
+					${include.radius['md']}
+			  `
+			: props.radius === 'circle'
+			? css`
+					${include.radius['md']}
+			  `
+			: css`
+					${include.radius['none']}
+			  `}
 
 	${props =>
 		props.inline
@@ -74,7 +101,7 @@ export const Button = styled(props => props.as)<{ size: any | null }>`
 
 	/* [Color] */
 	${props =>
-		props.primary
+		props.theme === 'primary'
 			? css`
 					background-color: ${include.colors.violet600};
 					border: 1px solid ${include.colors.violet600};
@@ -99,7 +126,7 @@ export const Button = styled(props => props.as)<{ size: any | null }>`
 							: include.colors.violet200};
 					}
 			  `
-			: props.warning
+			: props.theme === 'warning'
 			? css`
 					background-color: ${include.colors.orange500};
 					border: 1px solid ${include.colors.orange500};
@@ -125,6 +152,47 @@ export const Button = styled(props => props.as)<{ size: any | null }>`
 						background-color: ${props.outline
 							? `transparent`
 							: include.colors.orange600};
+					}
+			  `
+			: props.theme === 'form'
+			? css`
+					background-color: ${include.colors.slate200};
+					color: ${!props.outline
+						? include.colors.slate700
+						: include.colors.slate500};
+					border: 1px solid
+						${!props.outline
+							? 'transparent'
+							: include.colors.slate700};
+
+					&:hover {
+						background-color: ${!props.outline
+							? include.colors.slate300
+							: 'transparent'};
+
+						color: ${!props.outline
+							? include.colors.slate800
+							: include.colors.slate800};
+
+						border: 1px solid
+							${!props.outline
+								? 'transparent'
+								: include.colors.slate900};
+					}
+
+					&:active {
+						background-color: ${!props.outline
+							? include.colors.slate300
+							: 'transparent'};
+
+						color: ${!props.outline
+							? include.colors.slate400
+							: include.colors.slate400};
+
+						border: 1px solid
+							${!props.outline
+								? 'transparent'
+								: include.colors.slate900};
 					}
 			  `
 			: css`

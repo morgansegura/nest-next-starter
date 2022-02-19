@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 		padding: 0;
 		margin: 0;
 		background-color: ${include.colors.neutral100};
-		${include.fontSizing('16px', '24px')};
+		font-size: ${include.sp[4]};
 	}
 
 	div,

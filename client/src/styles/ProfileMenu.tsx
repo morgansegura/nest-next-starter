@@ -40,8 +40,8 @@ export const Menu = styled.div`
 	min-width: 200px;
 	padding-top: ${include.sp['1.5']};
 	padding-bottom: ${include.sp['1.5']};
-	border-top: 2px solid ${include.colors.stone50};
-	color: ${include.colors.stone800};
+	border-top: 2px solid ${include.colors.slate50};
+	color: ${include.colors.slate800};
 	letter-spacing: normal;
 	transition: opacity 0.3s ease-out;
 
@@ -53,30 +53,34 @@ export const Menu = styled.div`
 			: css`
 					display: none;
 			  `};
-	a {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding-top: ${include.sp[1]};
-		padding-right: ${include.sp[3]};
-		padding-bottom: ${include.sp[1]};
-		padding-left: ${include.sp[3]};
-		${include.fontSizing('14px', '28px')}
-		font-weight: 400;
-		border-top: 1px solid transparent;
-		border-bottom: 1px solid transparent;
-		transition: background-color 0.3s ease-out;
+`
 
-		&:not(:first-of-type) {
-			border-top: 1px solid ${include.colors.stone50};
-		}
+export const NavItem = styled.div`
+	flex: 1 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: ${include.sp[1]};
+	padding-right: ${include.sp[3]};
+	padding-bottom: ${include.sp[1]};
+	padding-left: ${include.sp[3]};
+	color: ${include.colors.slate800};
+	${include.fontSizing('14px', '28px')}
+	font-weight: 400;
+	cursor: pointer;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	transition: background-color 0.3s ease-out;
 
-		&:hover {
-			background-color: ${include.colors.stone50};
-		}
+	&:not(:first-of-type) {
+		border-top: 1px solid ${include.colors.slate50};
+	}
 
-		&:active {
-		}
+	&:hover {
+		background-color: ${include.colors.slate200};
+	}
+
+	&:active {
 	}
 `
 
@@ -112,8 +116,8 @@ export const Tab = styled.div`
 	${include.fontSizing('13px', '26px')}
 	text-transform: uppercase;
 	font-weight: 500;
-	/* background-color: ${include.colors.stone100}; */
-	border-bottom: 1px solid ${include.colors.stone100};
+	/* background-color: ${include.colors.slate100}; */
+	border-bottom: 1px solid ${include.colors.slate100};
 `
 
 export const Badge = styled.strong`
@@ -145,7 +149,7 @@ export const Badge = styled.strong`
 					background-color: ${include.colors.red800};
 			  `
 			: css`
-					color: ${include.colors.stone900};
-					background-color: ${include.colors.stone200};
+					color: ${include.colors.slate900};
+					background-color: ${include.colors.slate200};
 			  `}
 `

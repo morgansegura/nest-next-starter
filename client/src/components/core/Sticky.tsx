@@ -54,7 +54,7 @@ const Sticky: React.FC<StickyProps> = ({ children, top, height }) => {
 		window.addEventListener('scroll', onScroll)
 
 		return () => window.removeEventListener('scroll', onScroll)
-	}, [scrollDir])
+	}, [scrollDir, top])
 
 	return (
 		<StickyContainer sticky={sticky} height={height} ref={ref}>

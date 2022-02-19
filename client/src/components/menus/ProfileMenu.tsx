@@ -1,8 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// [Auth]
+import { logout } from 'auth'
 // [Styles]
-import { Avatar, Badge, Menu, MenuSelector, Tab } from 'styles/ProfileMenu'
+import {
+	Avatar,
+	Badge,
+	Menu,
+	MenuSelector,
+	Tab,
+	NavItem
+} from 'styles/ProfileMenu'
 
 type Props = {}
 
@@ -22,12 +31,25 @@ const ProfileMenu: React.FC<Props> = () => {
 			</MenuSelector>
 			<Menu isVisible={showMenu}>
 				<Tab>Username </Tab>
-				<Link to='/profile'>My Profile</Link>
-				<Link to='/account'>Account</Link>
-				<Link to='/account'>
-					Cart <Badge>3</Badge>
+
+				<Link to='/profile'>
+					<NavItem>My Profile</NavItem>
 				</Link>
-				<Link to='/account'>Logout</Link>
+
+				<Link to='/account'>
+					<NavItem>Account</NavItem>
+				</Link>
+
+				<Link to='/account'>
+					<NavItem>
+						Cart
+						<Badge>3</Badge>
+					</NavItem>
+				</Link>
+
+				<Link onClick={() => logout()} to='/'>
+					<NavItem>Logout</NavItem>
+				</Link>
 			</Menu>
 		</div>
 	)

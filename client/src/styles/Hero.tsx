@@ -156,11 +156,9 @@ export const HeroButton = styled.div`
 	display: inline-flex;
 	${include.fontSizing('16px', '24px', 600)};
 	color: ${(props: HeroProps) =>
-		props.color
-			? readableColor(props.color)
-			: readableColor(include.colors.white)};
+		props.color ? props.color : include.colors.white};
 	background-color: ${(props: HeroProps) =>
-		props.color ? props.color : readableColor(include.colors.violet900)};
+		props.color ? readableColor(props.color) : include.colors.violet900};
 	margin-top: ${include.sp[6]};
 	padding: ${include.sp[3]} ${include.sp[4]};
 	${include.radius.sm};

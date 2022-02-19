@@ -6,7 +6,10 @@ type Props = {
 	as?: any
 	size?: string
 	theme?: string
+	outline?: boolean
 	onClick?: any
+	radius?: string
+	type?: string
 }
 
 const Button: React.FC<Props> = ({
@@ -14,10 +17,20 @@ const Button: React.FC<Props> = ({
 	as = 'button',
 	size,
 	theme,
+	type,
+	radius,
+	outline,
 	onClick
 }) => {
 	return (
-		<ButtonType as={as} size={size} theme={theme} onClick={onClick}>
+		<ButtonType
+			as={as}
+			size={size}
+			theme={theme}
+			outline={outline}
+			radius={radius}
+			type={type}
+			onClick={onClick}>
 			{children}
 		</ButtonType>
 	)

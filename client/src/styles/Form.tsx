@@ -87,6 +87,7 @@ export const FormTitle = styled.div`
 	justify-content: center;
 	padding-top: ${include.sp['9']};
 	padding-bottom: ${include.sp['3']};
+	color: ${include.colors.slate600};
 `
 
 export const ToggleForm = styled.div`
@@ -140,7 +141,7 @@ export const MessageDisplay = styled.div`
 			? css`
 					background-color: ${include.colors.orange100};
 			  `
-			: props.theme == 'danger'
+			: props.theme === 'danger'
 			? css`
 					color: ${include.colors.red600};
 					border: 1px solid ${include.colors.red100};
