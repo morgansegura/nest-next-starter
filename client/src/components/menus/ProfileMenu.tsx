@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 // [Auth]
 import { logout } from 'auth'
 // [Styles]
@@ -40,7 +39,7 @@ const ProfileMenu: React.FC<Props> = () => {
 					<NavItem>Account</NavItem>
 				</Link>
 
-				<Link to='/account'>
+				<Link to='/cart'>
 					<NavItem>
 						Cart
 						<Badge>3</Badge>

@@ -23,6 +23,7 @@ const AppRouter: React.FC<Props> = ({ children }) => {
 			<AppProvider>
 				<Routes>
 					<Route path='/' element={<App />} />
+					<Route path='/about' element={<App />} />
 					<Route
 						path='/profile'
 						element={<PrivateRoute component={Profile} />}
